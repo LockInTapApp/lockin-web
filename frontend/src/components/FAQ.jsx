@@ -37,14 +37,14 @@ export default function FAQ() {
     <section
       id="faq"
       data-testid="faq-section"
-      className="relative py-24 md:py-40"
+      className="relative py-24 md:py-40 bg-white"
     >
       <div className="max-w-3xl mx-auto px-6 md:px-12">
         <div className="text-center reveal">
-          <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-400/80 mb-4 block">
+          <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-700 mb-4 block">
             FAQ
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight text-neutral-900">
             Questions, answered.
           </h2>
         </div>
@@ -60,12 +60,12 @@ export default function FAQ() {
               key={i}
               value={`item-${i}`}
               data-testid={`faq-item-${i + 1}`}
-              className="border-b border-white/10"
+              className="border-b border-neutral-200"
             >
-              <AccordionTrigger className="font-display text-lg md:text-xl font-normal text-left hover:no-underline hover:text-white text-white/90 py-6">
+              <AccordionTrigger className="font-display text-lg md:text-xl font-normal text-left hover:no-underline text-neutral-900 py-6">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-white/55 text-base leading-relaxed pb-6">
+              <AccordionContent className="text-neutral-600 text-base leading-relaxed pb-6">
                 {f.a}
               </AccordionContent>
             </AccordionItem>

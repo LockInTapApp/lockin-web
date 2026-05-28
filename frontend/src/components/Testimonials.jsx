@@ -31,24 +31,24 @@ export default function Testimonials() {
   return (
     <section
       data-testid="testimonials-section"
-      className="relative py-24 md:py-40 bg-[#0B0B0D]"
+      className="relative py-24 md:py-40 bg-[#F5F5F7]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 reveal">
           <div className="max-w-2xl">
-            <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-400/80 mb-4 block">
+            <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-700 mb-4 block">
               From the locked-in
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight text-neutral-900">
               Quiet phones.
               <br />
-              <span className="text-white/50">Loud results.</span>
+              <span className="text-neutral-500">Loud results.</span>
             </h2>
           </div>
-          <div className="flex items-center gap-2 text-white/60 text-sm">
+          <div className="flex items-center gap-2 text-neutral-600 text-sm">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={14} className="fill-emerald-400 text-emerald-400" />
+                <Star key={i} size={14} className="fill-emerald-600 text-emerald-600" />
               ))}
             </div>
             <span>4.9 average from 1,200+ early adopters</span>
@@ -60,7 +60,7 @@ export default function Testimonials() {
             <figure
               key={t.name}
               data-testid={`testimonial-${i + 1}`}
-              className="reveal glass-card rounded-3xl p-8 flex flex-col transition-all duration-500 hover:bg-white/[0.05]"
+              className="reveal card-light rounded-3xl p-8 flex flex-col transition-all duration-500"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="flex mb-5">
@@ -68,22 +68,22 @@ export default function Testimonials() {
                   <Star
                     key={j}
                     size={13}
-                    className="fill-emerald-400 text-emerald-400"
+                    className="fill-emerald-600 text-emerald-600"
                   />
                 ))}
               </div>
-              <blockquote className="text-white/80 leading-relaxed text-base md:text-lg font-light flex-1">
+              <blockquote className="text-neutral-800 leading-relaxed text-base md:text-lg font-light flex-1">
                 "{t.quote}"
               </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3 pt-6 border-t border-white/5">
+              <figcaption className="mt-6 flex items-center gap-3 pt-6 border-t border-neutral-100">
                 <img
                   src={t.avatar}
                   alt={t.name}
-                  className="w-10 h-10 rounded-full object-cover border border-white/10"
+                  className="w-10 h-10 rounded-full object-cover border border-neutral-200"
                 />
                 <div>
-                  <div className="text-sm text-white">{t.name}</div>
-                  <div className="text-xs text-white/45">{t.role}</div>
+                  <div className="text-sm text-neutral-900">{t.name}</div>
+                  <div className="text-xs text-neutral-500">{t.role}</div>
                 </div>
               </figcaption>
             </figure>

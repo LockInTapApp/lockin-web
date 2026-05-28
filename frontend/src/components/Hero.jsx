@@ -9,45 +9,39 @@ export default function Hero() {
     <section
       id="top"
       data-testid="hero-section"
-      className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden pt-28 md:pt-32"
+      className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden pt-28 md:pt-32 bg-white"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src={HERO_IMG}
-          alt="Lockin NFC brick beside a smartphone"
-          className="w-full h-full object-cover object-center opacity-70"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/55 to-[#0A0A0B]/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.18),transparent_55%)]" />
+      {/* Soft background wash */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-emerald-100/60 blur-3xl" />
+        <div className="absolute -top-20 right-0 w-[500px] h-[500px] rounded-full bg-neutral-100 blur-3xl" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
-        <div className="max-w-3xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full grid lg:grid-cols-12 gap-10 items-center">
+        {/* Left: content */}
+        <div className="lg:col-span-6">
           <div
             data-testid="hero-badge"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs uppercase tracking-[0.2em] text-white/70"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-xs uppercase tracking-[0.2em] text-neutral-700 shadow-sm"
           >
-            <Sparkles size={12} className="text-emerald-400" />
+            <Sparkles size={12} className="text-emerald-600" />
             <span>The focus device</span>
           </div>
 
           <h1
             data-testid="hero-headline"
-            className="font-display mt-6 text-5xl md:text-7xl lg:text-[88px] font-light tracking-tighter leading-[0.95] text-balance"
+            className="font-display mt-6 text-5xl md:text-6xl lg:text-7xl xl:text-[88px] font-light tracking-tighter leading-[0.95] text-neutral-900 text-balance"
           >
             Focus,
             <br />
-            <span className="italic font-extralight text-white/80">
+            <span className="italic font-extralight text-neutral-500">
               materialized.
             </span>
           </h1>
 
           <p
             data-testid="hero-subheadline"
-            className="mt-8 text-lg md:text-xl text-white/65 font-light max-w-xl leading-relaxed"
+            className="mt-8 text-lg md:text-xl text-neutral-600 font-light max-w-xl leading-relaxed"
           >
             Tap to disconnect. Lockin is a physical brick that instantly blocks
             distracting apps, websites and notifications — paired with a
@@ -58,7 +52,7 @@ export default function Hero() {
             <Button
               asChild
               data-testid="hero-primary-cta"
-              className="h-12 px-7 rounded-full bg-white text-black hover:bg-white/90 text-sm font-medium group"
+              className="h-12 px-7 rounded-full bg-neutral-900 text-white hover:bg-neutral-800 text-sm font-medium group"
             >
               <a href="#store" className="flex items-center gap-2">
                 Get Lockin
@@ -72,41 +66,66 @@ export default function Hero() {
               asChild
               variant="outline"
               data-testid="hero-secondary-cta"
-              className="h-12 px-7 rounded-full bg-transparent border-white/20 text-white hover:bg-white/5 hover:border-white/40 hover:text-white text-sm font-medium"
+              className="h-12 px-7 rounded-full bg-white border-neutral-300 text-neutral-900 hover:bg-neutral-50 hover:border-neutral-400 text-sm font-medium"
             >
               <a href="#how">See how it works</a>
             </Button>
           </div>
 
-          <div className="mt-16 flex items-center gap-8">
+          <div className="mt-14 flex items-center gap-8">
             <div data-testid="hero-stat-1">
-              <div className="font-display text-3xl font-light">3.2h</div>
-              <div className="text-xs uppercase tracking-[0.18em] text-white/40 mt-1">
+              <div className="font-display text-3xl font-light text-neutral-900">3.2h</div>
+              <div className="text-xs uppercase tracking-[0.18em] text-neutral-500 mt-1">
                 Avg. daily focus
               </div>
             </div>
-            <div className="h-10 w-px bg-white/10" />
+            <div className="h-10 w-px bg-neutral-200" />
             <div data-testid="hero-stat-2">
-              <div className="font-display text-3xl font-light">42d</div>
-              <div className="text-xs uppercase tracking-[0.18em] text-white/40 mt-1">
+              <div className="font-display text-3xl font-light text-neutral-900">42d</div>
+              <div className="text-xs uppercase tracking-[0.18em] text-neutral-500 mt-1">
                 Longest streak
               </div>
             </div>
-            <div className="h-10 w-px bg-white/10 hidden sm:block" />
+            <div className="h-10 w-px bg-neutral-200 hidden sm:block" />
             <div className="hidden sm:block" data-testid="hero-stat-3">
-              <div className="font-display text-3xl font-light">12k+</div>
-              <div className="text-xs uppercase tracking-[0.18em] text-white/40 mt-1">
+              <div className="font-display text-3xl font-light text-neutral-900">12k+</div>
+              <div className="text-xs uppercase tracking-[0.18em] text-neutral-500 mt-1">
                 People locked in
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-white/40">
-        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
+        {/* Right: product image showcase */}
+        <div className="lg:col-span-6 relative">
+          <div className="relative aspect-square w-full max-w-[620px] mx-auto">
+            {/* halo */}
+            <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-emerald-100 via-neutral-100 to-white blur-2xl opacity-80" />
+            <div className="relative aspect-square rounded-[36px] overflow-hidden border border-neutral-200 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.15)] bg-neutral-50">
+              <img
+                src={HERO_IMG}
+                alt="Lockin NFC brick beside a smartphone"
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+            {/* floating chip */}
+            <div className="absolute -bottom-5 -left-3 md:-left-6 bg-white border border-neutral-200 rounded-2xl px-4 py-3 shadow-[0_8px_24px_rgba(0,0,0,0.06)] flex items-center gap-3">
+              <div className="relative w-8 h-8">
+                <div className="absolute inset-0 rounded-full border-2 border-emerald-500/70 pulse-ring" />
+                <div className="absolute inset-0 rounded-full bg-emerald-500" />
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+                  NFC ready
+                </div>
+                <div className="text-sm font-medium text-neutral-900">
+                  Tap to Lockin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

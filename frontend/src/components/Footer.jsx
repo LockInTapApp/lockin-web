@@ -36,13 +36,13 @@ export default function Footer() {
   return (
     <footer
       data-testid="site-footer"
-      className="relative border-t border-white/5 bg-[#0A0A0B]"
+      className="relative bg-neutral-950 text-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Newsletter */}
           <div className="reveal">
-            <span className="text-xs uppercase tracking-[0.22em] text-emerald-400/80 mb-4 block">
+            <span className="text-xs uppercase tracking-[0.22em] text-emerald-400 mb-4 block">
               Stay in the loop
             </span>
             <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter leading-tight">
@@ -62,13 +62,13 @@ export default function Footer() {
                 placeholder="you@focus.com"
                 data-testid="newsletter-input"
                 required
-                className="h-12 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-emerald-500/40 rounded-full px-5"
+                className="h-12 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-emerald-400/50 rounded-full px-5"
               />
               <Button
                 type="submit"
                 disabled={loading}
                 data-testid="newsletter-submit"
-                className="h-12 px-6 rounded-full bg-white text-black hover:bg-white/90 text-sm font-medium"
+                className="h-12 px-6 rounded-full bg-white text-neutral-900 hover:bg-white/90 text-sm font-medium"
               >
                 {loading ? (
                   <Loader2 size={16} className="animate-spin" />
@@ -79,7 +79,7 @@ export default function Footer() {
                 )}
               </Button>
             </form>
-            <p className="mt-3 text-xs text-white/35">
+            <p className="mt-3 text-xs text-white/40">
               No spam. Unsubscribe anytime.
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function Footer() {
               },
             ].map((col) => (
               <div key={col.title}>
-                <div className="text-xs uppercase tracking-[0.2em] text-white/35 mb-4">
+                <div className="text-xs uppercase tracking-[0.2em] text-white/40 mb-4">
                   {col.title}
                 </div>
                 <ul className="space-y-3">
@@ -110,7 +110,7 @@ export default function Footer() {
                       <a
                         href="#"
                         data-testid={`footer-link-${it.toLowerCase().replace(/\s+/g, "-")}`}
-                        className="text-sm text-white/65 hover:text-white transition-colors"
+                        className="text-sm text-white/70 hover:text-white transition-colors"
                       >
                         {it}
                       </a>
@@ -132,7 +132,7 @@ export default function Footer() {
           </h2>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
           <div>© {new Date().getFullYear()} Lockin Labs. All rights reserved.</div>
           <div className="flex items-center gap-2">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
