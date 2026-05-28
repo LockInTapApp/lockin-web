@@ -1,0 +1,152 @@
+{
+  "project_name": "Lockin Landing Page",
+  "domain": "Productivity / Digital Wellness Hardware",
+  "theme_archetype": {
+    "archetype": "Archetype 5 (Luxury) + Dark Mode",
+    "reasoning": "A premium physical product + companion app positioned similarly to Apple hardware. Dark theme emphasizes the 'Lockin' (focus, lights out, deep work) concept while allowing product photography to shine."
+  },
+  "colors": {
+    "background": {
+      "primary": "#0A0A0B",
+      "secondary": "#121214",
+      "glass": "rgba(255, 255, 255, 0.03)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "rgba(255, 255, 255, 0.6)",
+      "muted": "rgba(255, 255, 255, 0.4)"
+    },
+    "accent": {
+      "primary": "#10B981",
+      "hover": "#059669",
+      "glow": "rgba(16, 185, 129, 0.2)"
+    },
+    "border": {
+      "default": "rgba(255, 255, 255, 0.08)",
+      "hover": "rgba(255, 255, 255, 0.15)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Outfit, sans-serif",
+      "body": "Manrope, sans-serif"
+    },
+    "rules": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl font-light tracking-tighter leading-tight",
+      "h2": "text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight leading-tight",
+      "h3": "text-xl md:text-2xl font-medium tracking-tight",
+      "body": "text-base md:text-lg text-white/60 leading-relaxed font-light",
+      "overline": "text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-white/40 mb-4 block"
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous spacing. Allow the product imagery to breathe. Use negative space to emphasize luxury.",
+    "containers": "max-w-7xl mx-auto px-6 md:px-12",
+    "section_spacing": "py-24 md:py-32 lg:py-40",
+    "grid_strategy": "The 'Control Room' / Bento grid for features to map the hardware+software ecosystem. Mode: 1 col mobile, 3 or 4 cols desktop."
+  },
+  "components_instructions": {
+    "buttons": "Premium feel. Solid white bg with black text for primary (Apple style), or glowing emerald outline for secondary. Hover state: subtle scale (scale-105) and glow. Always include data-testid.",
+    "cards": "Glassmorphism: bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-2xl md:rounded-3xl p-8. Hover: border-white/[0.15] shadow-[0_0_30px_rgba(255,255,255,0.03)].",
+    "navigation": "Sticky header (z-50). backdrop-blur-2xl bg-[#0A0A0B]/70 border-b border-white/5. Desktop navigation visible (no hamburger on desktop).",
+    "hero_overlay": "Gradient overlay from bottom to blend the hero image smoothly into the background: bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/40 to-transparent."
+  },
+  "motion_and_interactions": {
+    "scroll": "Smooth scrolling is mandatory (use Lenis if possible, or CSS scroll-behavior: smooth).",
+    "reveal": "Fade in and slight translate-y-4 on scroll for text blocks.",
+    "hover": "Cards and buttons should have subtle but instant feedback (transition-all duration-300 ease-out)."
+  },
+  "media_assets": {
+    "hero_nfc_brick": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d5f33ca5-0695-4e28-bd44-17f3f8fe1b8c/images/40ffef3e09b559fa1b49d93b9ac901ced08e1ed88aab915356003405adcf22b8.png",
+      "category": "hero",
+      "description": "Large hero background image showing the Lockin NFC brick and smartphone."
+    },
+    "how_it_works_tap": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d5f33ca5-0695-4e28-bd44-17f3f8fe1b8c/images/929d1d792cddf2b0fa5c7c6496a7a8417daf2a5de820b4f1e6164f96d7d3e0ba.png",
+      "category": "feature",
+      "description": "Image demonstrating tapping the phone on the NFC block."
+    },
+    "gamification_ui": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d5f33ca5-0695-4e28-bd44-17f3f8fe1b8c/images/5f868273e9010879bd93989bddc4b1737e72572b188557693a241e7770d85d49.png",
+      "category": "feature",
+      "description": "Mobile app UI showing streaks, achievements, and gamification."
+    },
+    "abstract_glass_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d5f33ca5-0695-4e28-bd44-17f3f8fe1b8c/images/cdb39427104441ddc838273884871cad5d5e77d70aa542c227568a3c868632e0.png",
+      "category": "background",
+      "description": "Abstract 3D floating glass background for the Settings or Pricing section."
+    },
+    "partner_logo_1": {
+      "url": "https://images.unsplash.com/photo-1622476512221-5fe08e42f898?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nbyUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3Nzk5ODA5NzB8MA&ixlib=rb-4.1.0&q=85",
+      "category": "logo",
+      "description": "Use purely as an abstract placeholder logo or filter it grayscale if rendering partner logos."
+    },
+    "partner_logo_2": {
+      "url": "https://images.pexels.com/photos/26576975/pexels-photo-26576975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "logo",
+      "description": "Favour Media logo to be used in 'featured in' or partner section."
+    },
+    "testimonial_avatar_1": {
+      "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3OTg4NzU2Mnww&ixlib=rb-4.1.0&q=85",
+      "category": "avatar",
+      "description": "Avatar for testimonial 1."
+    },
+    "testimonial_avatar_2": {
+      "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3OTg4NzU2Mnww&ixlib=rb-4.1.0&q=85",
+      "category": "avatar",
+      "description": "Avatar for testimonial 2."
+    },
+    "testimonial_avatar_3": {
+      "url": "https://images.unsplash.com/photo-1607503873903-c5e95f80d7b9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3OTg4NzU2Mnww&ixlib=rb-4.1.0&q=85",
+      "category": "avatar",
+      "description": "Avatar for testimonial 3."
+    }
+  },
+  "sections_breakdown": [
+    {
+      "name": "Navigation",
+      "layout": "Flexbox, space-between, sticky top. Logo on left, links center, CTA right.",
+      "content": "Links: Features, How it Works, FAQ. CTA: 'Buy Now' button."
+    },
+    {
+      "name": "Hero",
+      "layout": "Relative container. Full width. Content centered over the background image.",
+      "content": "Headline: 'Focus, materialized.', Subheadline: 'Tap to disconnect. Lockin is the physical brick that instantly blocks distractions on your phone.', Primary CTA: 'Get Lockin'. Large hero_nfc_brick image behind with gradient overlay."
+    },
+    {
+      "name": "How It Works (3 Steps)",
+      "layout": "3-column grid (md:grid-cols-3) with gap-8. 'how_it_works_tap' image featured above or beside the steps.",
+      "content": "Step 1: Open App. Step 2: Tap to Lockin. Step 3: NFC Tap Phone to Brick."
+    },
+    {
+      "name": "Features Bento",
+      "layout": "Grid layout. grid-cols-1 md:grid-cols-3 gap-6. Mix of span-1 and span-2 cards.",
+      "content": "Cards for: Bricking (app theme updates, stopwatch), Scheduled Bricking (modes, alarms), Gamification (streaks, badges - use gamification_ui image), Settings (strict mode, emergency unbrick). Use Lucide icons for visual interest."
+    },
+    {
+      "name": "Pricing/Store",
+      "layout": "Centered pricing card against abstract_glass_bg image (with heavy overlay to maintain text readability).",
+      "content": "Single product card. High-quality physical brick rendering (or use hero image again in small). Price, bullet points, mock 'Buy Now' button."
+    },
+    {
+      "name": "Testimonials",
+      "layout": "Horizontal scrolling row or 3-column grid.",
+      "content": "User reviews highlighting focus and productivity gains. Use the provided avatar images."
+    },
+    {
+      "name": "FAQ",
+      "layout": "Narrow container (max-w-3xl), Accordion list.",
+      "content": "Shadcn Accordion component. Minimalist style, border-b only, no backgrounds on items."
+    },
+    {
+      "name": "Footer",
+      "layout": "Large padding (py-32). Newsletter signup, large typography logo.",
+      "content": "Massive 'LOCKIN.' text at the bottom. Newsletter input using Shadcn input/button."
+    }
+  ],
+  "accessibility_and_testing": {
+    "test_ids": "Every button, link, and interactive element MUST have a data-testid attribute (e.g., data-testid='hero-cta-button', data-testid='faq-accordion-item-1').",
+    "contrast": "Ensure white text on dark backgrounds meets APCA standards. Use white/60 for secondary text, never darker."
+  }
+}
