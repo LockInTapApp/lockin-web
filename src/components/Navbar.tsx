@@ -1,117 +1,108 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/store", label: "Store" },
-  { href: "/contact", label: "Contact" },
+  { label: "Features", href: "#features" },
+  { label: "How it Works", href: "#how" },
+  { label: "Store", href: "#store" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <header
+      data-testid="site-navbar"
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-black/60 backdrop-blur-xl border-b border-white/10"
+          ? "backdrop-blur-2xl bg-white/75 border-b border-black/5 shadow-[0_1px_0_rgba(0,0,0,0.02)]"
           : "bg-transparent",
       )}
-      data-testid="site-navbar"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
-        <Link
-          href="/"
+      <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
+        <a
+          href="#top"
           data-testid="nav-logo"
-          className="font-display font-black text-xl tracking-tighter text-white"
+          className="font-display text-xl tracking-tight flex items-center gap-2 text-neutral-900"
         >
-          LOCKIN<span className="text-cyan-400">.</span>
-        </Link>
+          <span className="inline-block w-2.5 h-2.5 rounded-sm bg-emerald-600 shadow-[0_0_10px_rgba(5,150,105,0.4)]" />
+          <span className="font-semibold">Lockin</span>
+        </a>
 
         <nav className="hidden md:flex items-center gap-10">
-          {LINKS.map((l) => {
-            const isActive = pathname === l.href;
-            return (
-              <Link
-                key={l.href}
-                href={l.href}
-                data-testid={`nav-link-${l.label.toLowerCase()}`}
-                className={cn(
-                  "text-sm font-medium tracking-wide transition-colors duration-300",
-                  isActive ? "text-white" : "text-zinc-400 hover:text-white",
-                )}
-              >
-                {l.label}
-              </Link>
-            );
-          })}
+          {LINKS.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              data-testid={`nav-link-${l.label.toLowerCase().replace(/\s+/g, "-")}`}
+              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-200"
+            >
+              {l.label}
+            </a>
+          ))}
         </nav>
 
         <div className="hidden md:block">
-          <Link
-            href="/store"
-            data-testid="nav-cta-buy"
-            className="text-sm font-semibold bg-white text-black px-5 py-2.5 rounded-full hover:bg-zinc-200 transition-colors duration-300"
+          <Button
+            asChild
+            data-testid="nav-buy-button"
+            className="rounded-full bg-neutral-900 text-white hover:bg-neutral-800 px-5 h-10 text-sm font-medium"
           >
-            Get Lockin
-          </Link>
+            <a href="#store">Buy Lockin</a>
+          </Button>
         </div>
 
         <button
-          onClick={() => setOpen((s) => !s)}
           data-testid="nav-mobile-toggle"
-          className="md:hidden p-2 text-white"
+          onClick={() => setOpen((o) => !o)}
+          className="md:hidden p-2 text-neutral-700 hover:text-neutral-900"
           aria-label="Toggle menu"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-black/90 backdrop-blur-xl border-t border-white/10">
-          <div className="flex flex-col px-6 py-6 gap-5">
+        <div className="md:hidden border-t border-black/5 bg-white/95 backdrop-blur-2xl">
+          <div className="px-6 py-6 flex flex-col gap-4">
             {LINKS.map((l) => (
-              <Link
+              <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                data-testid={`nav-mobile-link-${l.label.toLowerCase()}`}
-                className="text-zinc-300 hover:text-white text-base"
+                data-testid={`nav-link-mobile-${l.label.toLowerCase().replace(/\s+/g, "-")}`}
+                className="text-base text-neutral-700 hover:text-neutral-900 py-1"
               >
                 {l.label}
-              </Link>
+              </a>
             ))}
-            <Link
-              href="/store"
-              onClick={() => setOpen(false)}
-              data-testid="nav-mobile-cta"
-              className="bg-white text-black px-5 py-3 rounded-full text-center font-semibold"
+            <Button
+              asChild
+              data-testid="nav-buy-button-mobile"
+              className="rounded-full bg-neutral-900 text-white hover:bg-neutral-800 mt-2"
             >
-              Get Lockin
-            </Link>
+              <a href="#store" onClick={() => setOpen(false)}>
+                Buy Lockin
+              </a>
+            </Button>
           </div>
         </div>
       )}
-    </motion.header>
+    </header>
   );
 }

@@ -1,29 +1,25 @@
 import type { Metadata } from "next";
-import { Chivo, Manrope } from "next/font/google";
+import { Outfit, Manrope } from "next/font/google";
 import { Toaster } from "sonner";
-
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { PageTransition } from "@/components/PageTransition";
 
 import "./globals.css";
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const chivo = Chivo({
-  variable: "--font-chivo",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
+  weight: ["200", "300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Lockin — Reclaim your focus",
+  title: "Lockin — Focus, materialized.",
   description:
-    "Lockin is a physical NFC brick that holds the keys to your phone. Tap once — apps go dark, notifications silence, the timer starts.",
+    "Lockin is a physical NFC brick that instantly blocks distracting apps, websites and notifications — paired with a companion app that tracks every minute you reclaim.",
 };
 
 export default function RootLayout({
@@ -32,19 +28,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${chivo.variable} antialiased`}>
-      <body className="min-h-screen bg-[#050505] text-white grain">
-        <Navbar />
-        <PageTransition>{children}</PageTransition>
-        <Footer />
+    <html lang="en" className={`${manrope.variable} ${outfit.variable}`}>
+      <body>
+        {children}
         <Toaster
-          theme="dark"
-          position="bottom-right"
+          theme="light"
+          position="top-center"
           toastOptions={{
             style: {
-              background: "#0a0a0a",
-              border: "1px solid rgba(255,255,255,0.1)",
-              color: "#fff",
+              background: "rgba(255, 255, 255, 0.98)",
+              border: "1px solid rgba(0,0,0,0.08)",
+              color: "#1d1d1f",
+              backdropFilter: "blur(20px)",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
             },
           }}
         />
