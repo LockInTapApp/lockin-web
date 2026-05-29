@@ -1,7 +1,4 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { Check, ShoppingBag } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { UNIT_PRICE_IDR, ORIGINAL_PRICE_IDR, formatIDR } from "@/lib/format";
@@ -15,8 +12,22 @@ const PERKS = [
   "Free shipping across Indonesia",
 ];
 
+const MARKETPLACES = [
+  {
+    id: "tokopedia",
+    label: "Buy on Tokopedia",
+    href: "https://www.tokopedia.com",
+    accent: "#03AC0E",
+  },
+  {
+    id: "shopee",
+    label: "Buy on Shopee",
+    href: "https://shopee.co.id",
+    accent: "#EE4D2D",
+  },
+];
+
 export function Pricing() {
-  const router = useRouter();
   const savings = Math.round(((ORIGINAL_PRICE_IDR - UNIT_PRICE_IDR) / ORIGINAL_PRICE_IDR) * 100);
 
   return (
@@ -75,14 +86,30 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <Button
-                data-testid="pricing-buy-button"
-                onClick={() => router.push("/checkout")}
-                className="mt-10 h-12 px-7 rounded-full bg-neutral-900 text-white hover:bg-neutral-800 text-sm font-medium"
-              >
-                <ShoppingBag size={16} className="mr-2" />
-                Checkout · {formatIDR(UNIT_PRICE_IDR)}
-              </Button>
+              <div className="mt-10 flex flex-col sm:flex-row gap-3">
+                {MARKETPLACES.map((m) => (
+                  <Button
+                    key={m.id}
+                    asChild
+                    data-testid={`pricing-buy-${m.id}`}
+                    className="flex-1 h-12 px-5 rounded-full bg-neutral-900 text-white hover:bg-neutral-800 text-sm font-medium"
+                  >
+                    <a href={m.href} target="_blank" rel="noopener noreferrer">
+                      <span
+                        className="w-2 h-2 rounded-full shrink-0"
+                        style={{ background: m.accent }}
+                        aria-hidden="true"
+                      />
+                      <span>{m.label}</span>
+                      <ArrowUpRight size={14} className="opacity-70" />
+                    </a>
+                  </Button>
+                ))}
+              </div>
+
+              <p className="mt-3 text-xs text-neutral-500">
+                Same price on both stores. Marketplace buyer protection included.
+              </p>
             </div>
 
             <div className="relative">
