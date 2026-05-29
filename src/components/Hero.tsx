@@ -41,7 +41,7 @@ export function Hero() {
             className="mt-8 text-lg md:text-xl text-neutral-600 font-light max-w-xl leading-relaxed"
           >
             Tap to disconnect. Lockin is a physical brick that instantly blocks distracting apps,
-            websites and notifications — paired with a companion app that tracks every minute you
+            websites and notifications, paired with a companion app that tracks every minute you
             reclaim.
           </p>
 

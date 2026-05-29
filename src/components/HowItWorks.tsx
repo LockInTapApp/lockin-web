@@ -10,7 +10,7 @@ const steps: Step[] = [
     n: "01",
     icon: Smartphone,
     title: "Open Lockin",
-    body: "Launch the app and pick a brick mode — whitelist, blacklist, or a custom preset.",
+    body: "Launch the app and pick a brick mode: whitelist, blacklist, or a custom preset.",
     testId: "how-step-1",
   },
   {

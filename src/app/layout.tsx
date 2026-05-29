@@ -17,9 +17,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Lockin — Focus, materialized.",
+  title: "Lockin: Focus, materialized.",
   description:
-    "Lockin is a physical NFC brick that instantly blocks distracting apps, websites and notifications — paired with a companion app that tracks every minute you reclaim.",
+    "Lockin is a physical NFC brick that instantly blocks distracting apps, websites and notifications, paired with a companion app that tracks every minute you reclaim.",
 };
 
 export default function RootLayout({

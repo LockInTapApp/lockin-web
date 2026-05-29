@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     q: "Do I need to charge the brick?",
-    a: "No. The Lockin brick is fully passive — no battery, no charging, no firmware updates. It works for life.",
+    a: "No. The Lockin brick is fully passive: no battery, no charging, no firmware updates. It works for life.",
   },
   {
     q: "Which phones work with Lockin?",
@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "What does the app track?",
-    a: "Total and average daily brick time, per-day session breakdowns, streaks, and unlocked badges. All session data is stored locally — your focus is private.",
+    a: "Total and average daily brick time, per-day session breakdowns, streaks, and unlocked badges. All session data is stored locally. Your focus is private.",
   },
   {
     q: "When does it ship?",

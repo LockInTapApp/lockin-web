@@ -93,7 +93,7 @@ export function Features() {
             <CalendarClock size={20} className="text-emerald-400 mb-5" />
             <h3 className="font-display text-2xl font-medium">Scheduled brick modes</h3>
             <p className="mt-2 text-white/60 text-sm">
-              Build presets — whitelist or blacklist — and assign them to calendar slots.
+              Build presets (whitelist or blacklist) and assign them to calendar slots.
             </p>
             <div className="mt-5 space-y-2 text-sm">
               <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-white/[0.04] border border-white/5">
