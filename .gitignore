@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# Claude Code — local-only settings (script in .claude/scripts/ stays tracked)
+.claude/settings.local.json
