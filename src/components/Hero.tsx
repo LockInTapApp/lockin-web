@@ -102,7 +102,7 @@ export function Hero() {
                 loading="eager"
               />
             </div>
-            <div className="absolute -bottom-5 -left-3 md:-left-6 bg-white border border-neutral-200 rounded-2xl px-4 py-3 shadow-[0_8px_24px_rgba(0,0,0,0.06)] flex items-center gap-3">
+            <div className="absolute bottom-4 left-4 md:-bottom-5 md:-left-6 bg-white border border-neutral-200 rounded-2xl px-4 py-3 shadow-[0_8px_24px_rgba(0,0,0,0.06)] flex items-center gap-3">
               <div className="relative w-8 h-8">
                 <div className="absolute inset-0 rounded-full border-2 border-emerald-500/70 pulse-ring" />
                 <div className="absolute inset-0 rounded-full bg-emerald-500" />

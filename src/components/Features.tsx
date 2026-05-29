@@ -19,7 +19,7 @@ export function Features() {
     <section
       id="features"
       data-testid="features-section"
-      className="relative py-20 md:py-28 bg-neutral-950 text-white"
+      className="relative py-20 md:py-28 bg-neutral-950 text-white overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px]" />
