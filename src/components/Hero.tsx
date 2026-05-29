@@ -60,7 +60,7 @@ export function Hero() {
               asChild
               variant="outline"
               data-testid="hero-secondary-cta"
-              className="h-12 px-7 rounded-full bg-white border-neutral-300 text-neutral-900 hover:bg-neutral-50 hover:border-neutral-400 text-sm font-medium"
+              className="h-12 px-7 rounded-full bg-white border-neutral-300 text-neutral-900 hover:bg-neutral-50 hover:text-neutral-900 hover:border-neutral-400 text-sm font-medium"
             >
               <a href="#how">See how it works</a>
             </Button>
