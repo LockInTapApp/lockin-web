@@ -15,7 +15,7 @@ const PRODUCT_LINKS = [
   { label: "FAQ", href: "#faq" },
 ];
 
-const CONTACT_EMAIL = "hello@lockin.so";
+const CONTACT_EMAIL = "support@lockintap.com";
 
 export function Footer() {
   const [email, setEmail] = useState("");
