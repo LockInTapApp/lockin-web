@@ -120,9 +120,8 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 font-display text-lg" data-testid="footer-logotype">
-            <span className="inline-block w-2 h-2 rounded-sm bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
-            <span className="font-semibold tracking-tight">Lockin</span>
+          <div data-testid="footer-logotype">
+            <Logo size={26} wordmarkClassName="text-lg text-white" />
           </div>
           <div className="flex items-center gap-5 text-xs text-white/45">
             <Link
