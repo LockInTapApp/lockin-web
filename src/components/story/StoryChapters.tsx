@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { Shield, Flame, Award, KeyRound, DoorOpen, MoonStar } from "lucide-react";
 
