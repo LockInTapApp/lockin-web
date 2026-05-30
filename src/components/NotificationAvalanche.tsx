@@ -23,7 +23,11 @@ type Phase = "idle" | "flooding" | "clearing" | "locked";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-export function NotificationAvalanche() {
+export function NotificationAvalanche({
+  variant = "full",
+}: {
+  variant?: "full" | "relentless";
+} = {}) {
   const phoneRef = useRef<HTMLDivElement>(null);
   const started = useRef(false);
   const [items, setItems] = useState<Item[]>([]);
