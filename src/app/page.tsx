@@ -20,6 +20,7 @@ export default function LandingPage() {
       <Hero />
       <Marquee />
       <HowItWorks />
+      <ModeBridge />
       <Features />
       <Pricing />
       <Testimonials />
