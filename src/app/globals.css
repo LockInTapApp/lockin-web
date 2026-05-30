@@ -149,3 +149,173 @@
     opacity: 0;
   }
 }
+
+/* ════════════════════════════════════════════════════════════
+   MOTION CONCEPTS — adapted from the animation lab, light/emerald.
+   Every effect is pure CSS, SSR-safe, and gated behind
+   prefers-reduced-motion so reduced-motion users get the calm end state.
+   ════════════════════════════════════════════════════════════ */
+
+/* 1 — Velocity Blur: the hero headline materializes from blur.
+   Stays fully opaque the whole time, so it remains LCP-safe. */
+.hero-blur-in {
+  will-change: filter, transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-blur-in {
+    animation: heroBlurIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+}
+@keyframes heroBlurIn {
+  0% {
+    filter: blur(9px);
+    transform: translateY(8px);
+  }
+  100% {
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* 2 — Line Clip Reveal: heading lines rise from behind a clip mask. */
+.clip-reveal .cr-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.clip-reveal .cr-inner {
+  display: block;
+  transform: translateY(110%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .clip-reveal .cr-inner {
+    transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .clip-reveal .cr-line:nth-child(2) .cr-inner {
+    transition-delay: 0.09s;
+  }
+  .clip-reveal .cr-line:nth-child(3) .cr-inner {
+    transition-delay: 0.18s;
+  }
+}
+.clip-reveal.in-view .cr-inner {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  /* No JS / no motion: show the text, never trapped behind the mask. */
+  .clip-reveal .cr-inner {
+    transform: none;
+  }
+}
+
+/* 3 — Breathing Aura: a slow emerald glow + concentric rings behind the brick. */
+.breathe-aura {
+  background: radial-gradient(
+    ellipse 62% 56% at 50% 50%,
+    rgba(16, 185, 129, 0.12) 0%,
+    rgba(16, 185, 129, 0.04) 42%,
+    transparent 72%
+  );
+}
+.breathe-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  transform: translate(-50%, -50%) scale(0.94);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .breathe-aura {
+    animation: breatheAura 5s ease-in-out infinite;
+  }
+  .breathe-ring {
+    animation: breatheRing 5s ease-in-out infinite;
+  }
+}
+@keyframes breatheAura {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+@keyframes breatheRing {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.94);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* 4 — Noise Grain Dissolve + hairline (Features, dark section). */
+.grain-dissolve {
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+}
+@media (prefers-reduced-motion: no-preference) {
+  .grain-dissolve {
+    opacity: 0.45;
+    transition: opacity 1.5s ease;
+  }
+  .grain-dissolve.in-view {
+    opacity: 0;
+  }
+}
+.grain-hairline {
+  width: 0;
+  height: 1px;
+  background: rgba(16, 185, 129, 0.6);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .grain-hairline {
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+}
+.in-view .grain-hairline {
+  width: 120px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain-hairline {
+    width: 120px;
+  }
+}
+
+/* 5 — Mode Switch bridge: a light "distracted" panel wipes to dark "Locked in". */
+.mode-bridge .mb-focused {
+  clip-path: circle(0% at 50% 50%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mode-bridge .mb-focused {
+    transition: clip-path 0.95s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mode-bridge .mb-distracted {
+    transition: opacity 0.6s ease 0.55s;
+  }
+}
+.mode-bridge[data-played="true"] .mb-focused {
+  clip-path: circle(150% at 50% 50%);
+}
+.mode-bridge[data-played="true"] .mb-distracted {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  /* No clip-path animation on reduced motion: simple crossfade. */
+  .mode-bridge .mb-focused {
+    clip-path: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .mode-bridge[data-played="true"] .mb-focused {
+    opacity: 1;
+  }
+}
