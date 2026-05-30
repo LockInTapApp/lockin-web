@@ -110,7 +110,7 @@ export default function PrivacyPage() {
           <code className="px-1.5 py-0.5 rounded bg-neutral-100 text-sm font-mono">com.lockin.tap</code>).
         </p>
 
-        <section className="mt-14 md:-mx-12 lg:-mx-24 xl:-mx-32 rounded-[2rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-emerald-50/40 to-white p-8 md:p-12 lg:p-14 grid md:grid-cols-5 gap-10 md:gap-12 items-start">
+        <section className="mt-14 rounded-[2rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-emerald-50/40 to-white p-8 md:p-12 lg:p-14 grid md:grid-cols-5 gap-10 md:gap-12 items-start">
           <div className="md:col-span-3">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-emerald-700 mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
