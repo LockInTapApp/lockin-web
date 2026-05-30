@@ -41,12 +41,14 @@ export function Pricing() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center max-w-2xl mx-auto reveal">
-          <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-700 mb-4 block">
+        <div className="text-center max-w-2xl mx-auto">
+          <span className="reveal text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-700 mb-4 block">
             Store
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight text-neutral-900">
-            One device. A lifetime of focus.
+          <h2 className="clip-reveal font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight text-neutral-900">
+            <span className="cr-line">
+              <span className="cr-inner">One device. A lifetime of focus.</span>
+            </span>
           </h2>
           <p className="mt-5 text-neutral-600 font-light">
             Ships across Indonesia. Free delivery, 30-day money-back guarantee.
