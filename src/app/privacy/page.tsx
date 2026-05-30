@@ -94,7 +94,7 @@ export default function PrivacyPage() {
         </div>
       </header>
 
-      <article className="max-w-3xl mx-auto px-6 md:px-12 py-16 md:py-24">
+      <article className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
         <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-700 mb-4 block">
           Legal
         </span>
