@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, Check, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy — Lockin",
+  title: "Privacy Policy | Lockin",
   description:
     "Lockin does not collect, transmit, sell, or share any personal data. Everything stays on your device.",
 };
