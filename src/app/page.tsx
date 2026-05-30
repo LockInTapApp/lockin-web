@@ -20,6 +20,7 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <Marquee />
+      <Problem />
       <HowItWorks />
       <ModeBridge />
       <Features />
