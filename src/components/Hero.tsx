@@ -29,7 +29,7 @@ export function Hero() {
 
           <h1
             data-testid="hero-headline"
-            className="font-display mt-6 text-5xl md:text-6xl lg:text-7xl xl:text-[88px] font-light tracking-tighter leading-[0.95] text-neutral-900 text-balance"
+            className="hero-blur-in font-display mt-6 text-5xl md:text-6xl lg:text-7xl xl:text-[88px] font-light tracking-tighter leading-[0.95] text-neutral-900 text-balance"
           >
             Focus,
             <br />
