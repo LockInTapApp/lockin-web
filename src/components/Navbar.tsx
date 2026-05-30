@@ -36,13 +36,8 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
-        <a
-          href="#top"
-          data-testid="nav-logo"
-          className="font-display text-xl tracking-tight flex items-center gap-2 text-neutral-900"
-        >
-          <span className="inline-block w-2.5 h-2.5 rounded-sm bg-emerald-600 shadow-[0_0_10px_rgba(5,150,105,0.4)]" />
-          <span className="font-semibold">Lockin</span>
+        <a href="#top" data-testid="nav-logo" className="text-neutral-900">
+          <Logo size={30} priority wordmarkClassName="text-xl text-neutral-900" />
         </a>
 
         <nav className="hidden md:flex items-center gap-10">
