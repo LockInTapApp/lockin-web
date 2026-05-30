@@ -75,6 +75,8 @@ export function NotificationAvalanche({
       await sleep(380);
       setShaking(false);
       await sleep(360);
+      // relentless: stay flooded, never resolve (the resolution is the tap)
+      if (variant === "relentless") return;
       // the one tap
       if (cancelled) return;
       setBrand(true);
