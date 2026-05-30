@@ -187,7 +187,7 @@ export function StoryChapters() {
             <div className="mt-6 flex items-center gap-3">
               <span className="story-mono">09:00</span>
               <div className="story-fade flex-1 h-2 rounded-full overflow-hidden bg-white/5">
-                <div className="story-bar h-full" style={{ ["--bar-w" as string]: "100%" }} />
+                <div className="story-bar h-full" style={{ "--bar-w": "100%" } as CSSProperties} />
               </div>
               <span
                 className="story-mono px-2 py-1 rounded"
