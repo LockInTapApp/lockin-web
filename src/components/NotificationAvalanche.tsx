@@ -23,11 +23,7 @@ type Phase = "idle" | "flooding" | "clearing" | "locked";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-export function NotificationAvalanche({
-  variant = "full",
-}: {
-  variant?: "full" | "relentless";
-} = {}) {
+export function NotificationAvalanche() {
   const phoneRef = useRef<HTMLDivElement>(null);
   const started = useRef(false);
   const [items, setItems] = useState<Item[]>([]);
@@ -75,8 +71,6 @@ export function NotificationAvalanche({
       await sleep(380);
       setShaking(false);
       await sleep(360);
-      // relentless: stay flooded, never resolve (the resolution is the tap)
-      if (variant === "relentless") return;
       // the one tap
       if (cancelled) return;
       setBrand(true);
@@ -95,11 +89,7 @@ export function NotificationAvalanche({
         started.current = true;
         obs.disconnect();
         if (reduce) {
-          if (variant === "relentless") {
-            setItems(FEED.slice(0, 5).map((f, i) => ({ ...f, uid: i })));
-          } else {
-            setPhase("locked");
-          }
+          setPhase("locked");
           return;
         }
         void play();
@@ -112,7 +102,7 @@ export function NotificationAvalanche({
       cancelled = true;
       obs.disconnect();
     };
-  }, [variant]);
+  }, []);
 
   const cleared = phase === "clearing" || phase === "locked";
 
