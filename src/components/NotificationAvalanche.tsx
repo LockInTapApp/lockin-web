@@ -112,7 +112,7 @@ export function NotificationAvalanche({
       cancelled = true;
       obs.disconnect();
     };
-  }, []);
+  }, [variant]);
 
   const cleared = phase === "clearing" || phase === "locked";
 
