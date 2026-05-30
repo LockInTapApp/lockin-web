@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Logo } from "@/components/Logo";
 import { subscribeNewsletter } from "@/lib/api";
 
 const PRODUCT_LINKS = [
