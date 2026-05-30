@@ -4,6 +4,7 @@ import { useReveal } from "@/lib/useReveal";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
+import { Problem } from "@/components/Problem";
 import { HowItWorks } from "@/components/HowItWorks";
 import { ModeBridge } from "@/components/ModeBridge";
 import { Features } from "@/components/Features";
