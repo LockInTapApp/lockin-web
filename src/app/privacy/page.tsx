@@ -110,15 +110,41 @@ export default function PrivacyPage() {
           <code className="px-1.5 py-0.5 rounded bg-neutral-100 text-sm font-mono">com.lockin.tap</code>).
         </p>
 
-        <section className="mt-12 rounded-3xl border border-emerald-200 bg-emerald-50/40 p-6 md:p-8">
-          <h2 className="font-display text-xl md:text-2xl font-medium">Summary (plain language)</h2>
-          <p className="mt-3 text-neutral-700 leading-relaxed">
-            <strong>Lockin does not collect, transmit, sell, or share any personal data.</strong>{" "}
-            Everything the app stores stays <strong>on your device</strong>. The app has{" "}
-            <strong>no internet access</strong>: it does not include the <code className="px-1.5 py-0.5 rounded bg-white text-sm font-mono">INTERNET</code>{" "}
-            permission, contains no analytics, advertising, or crash-reporting libraries, and makes
-            no network connections. There are no servers and no third parties involved.
-          </p>
+        <section className="mt-14 md:-mx-12 lg:-mx-24 xl:-mx-32 rounded-[2rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-emerald-50/40 to-white p-8 md:p-12 lg:p-14 grid md:grid-cols-5 gap-10 md:gap-12 items-start">
+          <div className="md:col-span-3">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-emerald-700 mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+              The short version
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter leading-[1.05] text-neutral-900">
+              Nothing leaves
+              <br />
+              your device.
+            </h2>
+            <p className="mt-6 text-neutral-700 leading-relaxed text-base md:text-lg">
+              Lockin doesn&apos;t collect, transmit, sell, or share any personal data. The app
+              stores everything locally and never reaches the network.
+            </p>
+          </div>
+          <ul className="md:col-span-2 space-y-3.5 text-neutral-800">
+            {[
+              <>
+                No <code className="px-1.5 py-0.5 rounded bg-white border border-emerald-100 text-sm font-mono">INTERNET</code> permission
+              </>,
+              "No analytics or telemetry",
+              "No advertising libraries",
+              "No crash-reporting libraries",
+              "No servers, no third parties",
+              "No network connections",
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm md:text-base">
+                <span className="mt-0.5 w-5 h-5 rounded-full bg-white border border-emerald-200 flex items-center justify-center shrink-0">
+                  <Check size={11} className="text-emerald-700" />
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="mt-16">
