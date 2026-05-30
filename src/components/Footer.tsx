@@ -123,8 +123,15 @@ export function Footer() {
             <span className="inline-block w-2 h-2 rounded-sm bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
             <span className="font-semibold tracking-tight">Lockin</span>
           </div>
-          <div className="text-xs text-white/45">
-            © {new Date().getFullYear()} Lockin Labs. Crafted for deep work.
+          <div className="flex items-center gap-5 text-xs text-white/45">
+            <Link
+              href="/privacy"
+              data-testid="footer-link-privacy"
+              className="hover:text-white transition-colors"
+            >
+              Privacy
+            </Link>
+            <span>© {new Date().getFullYear()} Lockin Labs. Crafted for deep work.</span>
           </div>
         </div>
       </div>
