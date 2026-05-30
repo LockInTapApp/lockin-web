@@ -33,14 +33,16 @@ export function HowItWorks() {
   return (
     <section id="how" data-testid="how-it-works-section" className="relative py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-3xl reveal">
-          <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-700 mb-4 block">
+        <div className="max-w-3xl">
+          <span className="reveal text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-700 mb-4 block">
             How it works
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight text-neutral-900">
-            Three taps to a quieter mind.
+          <h2 className="clip-reveal font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight text-neutral-900">
+            <span className="cr-line">
+              <span className="cr-inner">Three taps to a quieter mind.</span>
+            </span>
           </h2>
-          <p className="mt-6 text-lg text-neutral-600 font-light max-w-2xl">
+          <p className="reveal mt-6 text-lg text-neutral-600 font-light max-w-2xl">
             Lockin is built around a single ritual: place your phone on the brick to enter deep work, tap
             again to come back.
           </p>
