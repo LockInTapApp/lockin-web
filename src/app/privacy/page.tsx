@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowLeft, Check, Mail } from "lucide-react";
 
+import { Logo } from "@/components/Logo";
+
 export const metadata = {
   title: "Privacy Policy | Lockin",
   description:
