@@ -24,12 +24,14 @@ export function Features() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px]" />
       </div>
+      <div className="grain-dissolve absolute inset-0 pointer-events-none" aria-hidden="true" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl reveal">
-          <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-400 mb-3 block">
+          <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-emerald-400 block">
             Capabilities
           </span>
+          <div className="grain-hairline mt-3 mb-5" />
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight">
             A whole focus system,
             <br />
